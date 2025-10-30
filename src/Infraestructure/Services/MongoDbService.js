@@ -144,6 +144,10 @@ class MongoDbService {
                 pipeline.push({ $limit: options.limit });
             }
 
+            if (pipeline.length == 0) {
+                pipeline.push({ $match: {} });
+            }
+
             return await model.aggregate(pipeline);
         }
         catch(error) {
