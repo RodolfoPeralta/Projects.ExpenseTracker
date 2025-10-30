@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "49de9c9d-3417-4460-91cf-87f1e37c5770",
+		"name": "Expense Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32093376"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/users/68f9537df2eaa0e3620d8e28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"68f9537df2eaa0e3620d8e28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Rodolfo\",\r\n    \"last_name\": \"Peralta\",\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"38497120Ab.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/v1/sessions/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"38497120Ab.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/v1/sessions/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Rodolfo\",\r\n    \"last_name\": \"Peralta\",\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"38497120Ab.\",\r\n    \"budget\": {\r\n        \"amount\": 5000\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/v1/users/68f9537df2eaa0e3620d8e28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"68f9537df2eaa0e3620d8e28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/users/68f94986bacde034e73ec15f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"68f94986bacde034e73ec15f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expenses",
+			"item": [
+				{
+					"name": "Get Expenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/expenses/68f94f5849d8a83e23543533",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"expenses",
+								"68f94f5849d8a83e23543533"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Expense",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY4ZmQyYjZkNDc5MTMyNGM3MjVkNGEyNyIsImZpcnN0X25hbWUiOiJMaWxpYW5hIiwibGFzdF9uYW1lIjoiUHJldmlvdHRvIiwiZW1haWwiOiJsaWxpYW5hcHJldmlvdHRvQGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkODBNcGV3M1h4c2F3ZnExUmR2aXFGZUlOTU9zQ3hVRXVBRGxDbjRuSU9FaEdpczVadTN6dWEiLCJyb2xlIjoidXNlciIsImJ1ZGdldCI6eyJhbW91bnQiOm51bGwsInN0YXR1cyI6InVua25vd24iLCJtb250aCI6bnVsbH0sIl9fdiI6MH0sImlhdCI6MTc2MTQyMzAxMCwiZXhwIjoxNzYxNDI2NjEwfQ.-oPiVvNHyoHOkIwN1JVnKr72Fp2jlpRmB8adQYgyWvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 50000,\r\n    \"category\": \"supermarket\",\r\n    \"description\": \"supermarket expense 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/v1/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Expense By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/v1/expenses/68f94f5849d8a83e23543533",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"expenses",
+								"68f94f5849d8a83e23543533"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
