@@ -7,7 +7,7 @@ class ExpenseController {
 
     static async GetExpenses(request, response) {
         try {
-            let { category, user_id } = request.query;
+            let { category, user_id, from, to } = request.query;
 
             const filter = {};
 
@@ -34,6 +34,14 @@ class ExpenseController {
 
             if(category) {
                 filter.category = category;
+            }
+
+            if(from) {
+                filter.from = from;
+            }
+
+            if(to) {
+                filter.to = to;
             }
 
             const options = { query: filter };

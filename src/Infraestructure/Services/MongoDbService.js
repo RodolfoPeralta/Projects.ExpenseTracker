@@ -105,9 +105,30 @@ class MongoDbService {
     static async Aggregate(model, options) {
         try {
             const pipeline = [];
+            const query = { ...options.query };
 
-            if(options.query) {
-                pipeline.push({ $match: options.query });
+            const from = query.from;
+            const to = query.to;
+
+            delete query.from;
+            delete query.to;
+
+            if (from || to) {
+                query.date = {};
+
+                if (from) {
+                    const fromDate = new Date(from);
+                    query.date.$gte = fromDate;
+                }
+
+                if (to) {
+                    const toDate = new Date(to);
+                    query.date.$lte = toDate;
+                }
+            }
+
+            if (Object.keys(query).length > 0) {
+                pipeline.push({ $match: query });
             }
 
             if(options.sort) {
